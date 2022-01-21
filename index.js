@@ -8,103 +8,63 @@ const inquirer = require('inquirer');
 inquirer
   .prompt([
     {
-        type: 'input',
-        message: 'What is your projects title?',
-        name: 'prj_name'
+        type:'input',
+        message:'What is your Github Username?',
+        name:'Github',
     },
     {
         type:'input',
-        message:'Write a brief project description',
+        message:'What is your Email Address?',
+        name:'Email',
+    },
+    {
+        type:'input',
+        message:"What is your project's name?",
+        name:'prj_name',
+    },
+    {
+        type:'input',
+        message:'Please write a short description of your project',
         name:'description',
     },
-    {
-        type:'input',
-        message:'What was your motivation?',
-        name:'motivation'
+    {//https://docs.github.com/en/rest/reference/licenses#get-all-commonly-used-licenses
+        type:'list',
+        message:'What kind of license should your project have?',
+        choices:[   "MIT License",
+                    "GNU Lesser General Public License v3.0",
+                    "Mozilla Public License 2.0",
+                    "GNU Affero General Public License v3.0",
+                    "The Unlicense",
+                    "Apache License 2.0",
+                    "GNU General Public License v3.0",
+                    "None"],
+        name:'license',
     },
     {
         type:'input',
-        message:'Why did you build this project?',
-        name:'why'
+        message:'What command should be run to install dependencies?',
+        name:'install_depen',
     },
     {
         type:'input',
-        message:'What problem does it solve?',
-        name:'problem',
+        message:'What command should be run to run tests?',
+        name:'tests',
     },
     {
         type:'input',
-        message:'What did you learn?',
-        name:'learn',
+        message:'What does the user need to know about using the repo?',
+        name:'user_info',
     },
     {
         type:'input',
-        message:'What makes your project stand out?',
-        name:'stand_out',
-    },
-    {
-        type:'input',
-        message:'What are the steps required to install your project?',
-        name:'install',
-    },
-    {
-        type:'input',
-        message:'How would someone use your project?',
-        name:'usage',
-    },
-    {
-        type:'input',
-        message:'contribution guidelines?',
+        message:'What does the user need to know about contributing to the repo?',
         name:'contribution',
     },
-    {
-        type:'input',
-        message:'Write the test instructions',
-        name:'Test',
-    },
-    {
-        type:'input',
-        message:'',
-        name:'',
-    },
-    {
-        type:'input',
-        message:'',
-        name:'',
-    },
-    {
-        type:'input',
-        message:'',
-        name:'',
-    },
-    {
-        type:'input',
-        message:'',
-        name:'',
-    },
-    {
-        type:'input',
-        message:'',
-        name:'',
-    },
-    {
-        type:'input',
-        message:'',
-        name:'',
-    },
-    {
-        type:'input',
-        message:'',
-        name:'',
-    },
-    {
-        type:'input',
-        message:'',
-        name:'',
-    },
-
-
-    
+   //{
+   //    type:'input',
+   //    message:'',
+   //    name:'',
+   //},
 
   ])
   .then((response) =>
@@ -118,19 +78,6 @@ inquirer
     return `# ${data.prj_name}
     ## Description
     ${data.description}
-    ####Motivation
-    ${data.motivation}
-    ####Why did I build this project?
-    ${data.why}
-    ####What problem did I solve?
-    ${data.problem}
-    ####What did I learn?
-    ${data.learn}
-    ####Why does your project stand out?
-    ${data.stand_out}
-    ##Installation
-    ${data.install}
-    ##Usage
-    ${data.usage}
+    
     ` 
     }
