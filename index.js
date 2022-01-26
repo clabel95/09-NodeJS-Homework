@@ -75,7 +75,7 @@ inquirer
   var generateReadMe = (data) => {
     return `# ${data.prj_name}
 ## License
-[!License: ${data.license}](https://img.shields.io/badge/License-${data.license}-yellow.svg)
+![License: ${data.license}](https://img.shields.io/badge/License-${data.license}-yellow.svg)
 
 
 ## Table of contents
