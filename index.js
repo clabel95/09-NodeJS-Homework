@@ -79,12 +79,14 @@ inquirer
 
 
 ## Table of contents
-* [Description](#description)
-* [Installation instructions](#installation)
-* [Usage information](#usage)
-* [Contribution guidelines](#contribution)
-* [Test instructions](#test)
-* [Questions](#questions)
+  * [License](#license)
+  * [Table of contents](#table-of-contents)
+  * [Description](#description)
+  * [Installation](#installation)
+  * [Usage](#usage)
+  * [Contribution](#contribution)
+  * [Test](#test)
+  * [Questions](#questions)
 
 
 ## Description
