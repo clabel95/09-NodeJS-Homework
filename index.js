@@ -30,14 +30,12 @@ inquirer
     {//https://docs.github.com/en/rest/reference/licenses#get-all-commonly-used-licenses
         type:'list',
         message:'What kind of license should your project have?',
-        choices:[   "MIT License",
-                    "GNU Lesser General Public License v3.0",
-                    "Mozilla Public License 2.0",
-                    "GNU Affero General Public License v3.0",
-                    "The Unlicense",
-                    "Apache License 2.0",
-                    "GNU General Public License v3.0",
-                    "None"],
+        choices:[   "MIT",
+                    "GPLv3",
+                    "MPL_2.0",
+                    "AGPL_v3",
+                    "Unlicense"
+                ],
         name:'license',
     },
     {
@@ -76,8 +74,43 @@ inquirer
 
   var generateReadMe = (data) => {
     return `# ${data.prj_name}
-    ## Description
-    ${data.description}
-    
-    ` 
+## License
+[!License: ${data.license}](https://img.shields.io/badge/License-${data.license}-yellow.svg)
+
+
+## Table of contents
+* [Description](#description)
+* [Installation instructions](#installation)
+* [Usage information](#usage)
+* [Contribution guidelines](#contribution)
+* [Test instructions](#test)
+* [Questions](#questions)
+
+
+## Description
+${data.description}
+
+
+## Installation
+${data.install_depen}
+
+
+## Usage
+${data.user_info}
+
+
+## Contribution
+${data.contribution}
+
+
+## Test
+${data.tests}
+
+
+## Questions
+[Github](https://github.com/${data.Github})
+
+For more questions email me at ${data.Email}.
+
+` 
     }
